@@ -1,0 +1,19 @@
+<h2>Enter Five Numbers</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+<h3>Results</h3>
+
+<p><b>Original Values:</b> {{ result.original }}</p>
+<p><b>Sorted (>10):</b> {{ result.sorted }}</p>
+<p><b>Average:</b> {{ result.average }}</p>
+<p><b>Positive Count:</b> {{ result.positive_count }}</p>
+<p><b>Even/Odd (Bitwise):</b> {{ result.even_or_odd }}</p>
+<p><b>Average > 50:</b> {{ result.avg_gt_50 }}</p>
+
+{% endif %}
